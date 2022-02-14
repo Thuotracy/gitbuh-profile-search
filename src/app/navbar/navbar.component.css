@@ -1,0 +1,27 @@
+.bg-black {
+  background-color: coral;
+  color: cornflowerblue;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+.nav-item {
+  background-color: gray;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: cornflowerblue;
+  color: black;
+}

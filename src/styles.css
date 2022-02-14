@@ -1,0 +1,21 @@
+body {
+  background-color: black;
+}
+.body {
+  background-color: darkgray;
+  background-image: url(assets/back-hat.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+h2 {
+  color: coral;
+  font-size: larger;
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.main {
+  margin-top: 50px;
+}

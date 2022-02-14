@@ -1,0 +1,41 @@
+<div class="container main">
+  <ng-progress></ng-progress>
+  <div class="jumbotron bg-blacks">
+    <img src="https://res.cloudinary.com/dzawgnnlr/image/upload/q_auto/f_auto/w_auto/github_logo.png" alt="git"
+      width="150" height="150" class="logo">
+    <img style="float: right;"
+      src="https://res.cloudinary.com/dzawgnnlr/image/upload/q_auto/f_auto/w_auto/github_logo.png" alt="git" width="150"
+      height="150" class="logo">
+    <h1 class="display-4 text-center"> Git-Search</h1>
+    <h3 class="text-center">Input Username</h3>
+    <form class="form-group" id="brian">
+      <input type="text" class="form-control" placeholder="Input your username" [(ngModel)]="reponame" name="reponame"
+        (keyup)="search(reponame)" maxlength="20">
+    </form>
+  </div>
+</div>
+<div class="container">
+
+  <h2 class="text-center">Repositories</h2>
+  <div class="">
+    <div class="card" *ngFor="let repository of repo">
+      <div class="card-header">
+        <h4 class="card-title"> <span class="h4">REPOSITORY NAME:</span><span class="rep float-right"
+            appUnderline>{{repository.name}}</span> </h4>
+      </div>
+      <div class="card-body">
+        <p> <span class="h5">DESCRIPTION:</span> {{repository.description}}</p>
+        <div><span class="h5">Language:</span><span class="float-right">{{repository.language}}</span></div>
+        <div><span class="h5">Created:</span> <span class="float-right">{{repository.created_at | datePipe}}</span>
+        </div>
+        <div><span class="h5">On:</span> <span class="float-right">{{repository.created_at | date}}</span></div>
+      </div>
+      <div class="card-footer">
+        <div class="btn-group float-right">
+          <button class="button btn"><a href="{{repository.html_url}}" target="blank" class="card-link">View On
+              Github</a> </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

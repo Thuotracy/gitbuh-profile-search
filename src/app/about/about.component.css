@@ -1,0 +1,11 @@
+.jumbotron {
+  box-shadow: 4px 8px 16px 5px rgb(255, 127, 80);
+  color: coral;
+}
+.jumbotron:hover {
+  box-shadow: 4px 8px 16px 5px rgb(100, 149, 237);
+  color: cornflowerblue;
+}
+.card:hover {
+  box-shadow: 4px 8px 16px 5px rgb(100, 149, 237);
+}

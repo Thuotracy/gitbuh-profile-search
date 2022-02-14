@@ -1,0 +1,76 @@
+<div class="container main">
+  <ng-progress></ng-progress>
+  <div class="jumbotron bg-blacks">
+    <img src="../../assets/github_logo.png" alt="git" width="150" height="150" class="logo">
+    <img style="float: right;" src="../../assets/github_logo.png" alt="git" width="150" height="150" class="logo">
+    <h1 class="display-4 text-center"> Git-Search</h1>
+    <div class="row formA">
+      <div class="col-md-12">
+        <h3 class="text-center">Input Username</h3>
+        <app-search-form (searchOutput)="getUser($event)"></app-search-form>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card bg-black">
+        <div class="card-title">
+          <h2 class="text-center">Users Profile</h2>
+        </div>
+        <div class="card-body">
+          <div *ngIf="searchUsers">
+            <img src="{{user.avatar_url}}" alt="profile" style="width:100%">
+            <div class="container">
+              <h3 appUnderline>{{user.name}}</h3>
+              <hr>
+              <p>Username: <span>{{user.login}}</span></p>
+              <hr>
+              <p>Email: <span>{{user.email}}</span> </p>
+              <hr>
+              <p>Location: <span>{{user.location}}</span></p>
+              <hr>
+              <p>Follwers:<span>{{user.followers}}</span></p>
+              <hr>
+              <p>Following:<span>{{user.following}}</span></p>
+              <hr>
+              <p>Repositories:<span>{{user.public_repos}}</span></p>
+              <hr>
+              <p>Joined: <span>{{user.created_at | datePipe}}</span></p>
+              <a href="{{user.html_url}}" target="_blank"><button class="button">Go To Profile</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div>
+        <div class="card bg-black">
+          <h2 class="text-center">Repositories</h2>
+        </div>
+        <div class="">
+          <div class="card bg-b" *ngFor="let repository of repo">
+            <div class="card-header">
+              <h4 class="card-title"> <span class="h4">REPOSITORY NAME:</span><span class="rep"
+                  appUnderline>{{repository.name}}</span> </h4>
+              <hr>
+            </div>
+            <div class="card-body">
+              <p> <span class="h5">DESCRIPTION:</span> {{repository.description}}</p>
+              <div><span class="h5">Language:</span><span class="float-right">{{repository.language}}</span></div>
+              <div><span class="h5">Created:</span> <span
+                  class="float-right">{{repository.created_at | datePipe}}</span></div>
+              <div><span class="h5">On:</span> <span class="float-right">{{repository.created_at | date}}</span></div>
+            </div>
+            <div class="card-footer">
+              <div class="btn-group float-right">
+                <button class="button btn"><a href="{{repository.html_url}}" target="blank" class="card-link">View On
+                    Github</a> </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
